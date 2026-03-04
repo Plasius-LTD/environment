@@ -10,10 +10,26 @@ export default defineConfig({
       "tests/**/*.tests.ts",
       "tests/**/*.tests.tsx",
     ],
-    passWithNoTests: true,
+    passWithNoTests: false,
     coverage: {
-      reporter: ["text", "json", "html"], // Output formats
-      exclude: ["**/node_modules/**", "dist", "**/types/**"],
+      all: false,
+      reporter: ["text", "json", "html", "lcov"],
+      exclude: [
+        "**/node_modules/**",
+        "dist/**",
+        "dist-cjs/**",
+        "coverage/**",
+        "scripts/**",
+        "**/*.config.*",
+        "eslint.config.js",
+        "**/types/**",
+      ],
+      thresholds: {
+        lines: 80,
+        functions: 80,
+        statements: 75,
+        branches: 50,
+      },
     },
   },
 });
