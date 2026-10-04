@@ -1,6 +1,6 @@
 {
   "name": "@plasius/environment",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "Plasius Environment provider/context",
   "keywords": [
     ".env",
